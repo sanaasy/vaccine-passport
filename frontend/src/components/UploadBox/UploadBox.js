@@ -3,6 +3,7 @@ import {useDropzone} from 'react-dropzone'
 import {Image} from 'react-bootstrap';
 import UploadIcon from './uploadIcon.svg';
 import SubmitButton from "../SubmitButton";
+import Copy from "./copy.png";
 
 function UploadBox() {
   const uploadBoxStyling = {
@@ -40,11 +41,13 @@ function UploadBox() {
   }, []);
 
   const thumbs = files.map(file => (
-    <div key={file.name}>
+    <div key={file.name} style={{marginTop: '8rem', fontSize: '32px'}}>
       <img
-        src={file.preview}
+        src={Copy}
+        alt="uploaded"
+        style={{width: '20px'}}
       />
-      {file.name}
+      {' '}{file.name}
     </div>
   ));
 
@@ -76,7 +79,6 @@ console.log(files.length)
         { files.length === 0 ? 
            hoverDrag() :
             <div style={textStyling}>
-              <Image src={UploadIcon} style={imageStyling} />
               {thumbs}
             </div>
         }
