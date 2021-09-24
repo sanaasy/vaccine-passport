@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Button} from 'react-bootstrap';
 import QRCode from "../QRCode";
+import { useHistory } from "react-router-dom";
 
 function SubmitButton({uploadedReceipt, fileName}) {
     const buttonStyling = {
@@ -16,22 +17,24 @@ function SubmitButton({uploadedReceipt, fileName}) {
         fontWeight: 'bold'
     }
 
-    const [submitted, isSubmitted] = useState(false);
+    const history = useHistory();
+
+    const routeChange = () =>{ 
+        let path = `acceptQR`; 
+        history.push(path);
+    }
  
-    if(uploadedReceipt && !submitted){
+    if(uploadedReceipt){
         return (
             <Button 
                 className="justify-content-center" 
                 size="lg" 
                 type="submit" 
                 style={buttonStyling}
-                onPress={() => {
-                    if(fileName === '2nddose.pdf'){
-                        <QRCode accept={true}/>
-                    } else {
-                        <QRCode accept={false} />
-                    }
-                }}
+                // onPress={() => {
+                //     setSubmitted(true)
+                // }}
+                onClick={routeChange}
             >
                 SUBMIT
             </Button>

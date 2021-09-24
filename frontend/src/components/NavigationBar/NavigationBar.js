@@ -21,6 +21,16 @@ function NavigationBar() {
             <Nav.Item>
               <Nav.Link href="/search">SEARCH LOCATIONS</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/acceptQR" disabled>
+                
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/accept" disabled>
+                
+              </Nav.Link>
+            </Nav.Item>
           </Nav>  
         </Navbar.Collapse>
       </Container>
