@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button} from 'react-bootstrap';
+import QRCode from "../QRCode";
 
 function SubmitButton({uploadedReceipt, fileName}) {
     const buttonStyling = {
@@ -15,16 +16,20 @@ function SubmitButton({uploadedReceipt, fileName}) {
         fontWeight: 'bold'
     }
 
-    if(uploadedReceipt){
+    const [submitted, isSubmitted] = useState(false);
+ 
+    if(uploadedReceipt && !submitted){
         return (
             <Button 
                 className="justify-content-center" 
                 size="lg" 
                 type="submit" 
                 style={buttonStyling}
-                onPress={ () =>{
-                    if(fileName === 'vaccine.pdf'){
-
+                onPress={() => {
+                    if(fileName === '2nddose.pdf'){
+                        <QRCode accept={true}/>
+                    } else {
+                        <QRCode accept={false} />
                     }
                 }}
             >

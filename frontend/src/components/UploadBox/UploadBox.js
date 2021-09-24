@@ -68,7 +68,7 @@ function UploadBox() {
         </ div> 
     )
   }
-
+console.log(files.length)
   return (
     <>
       <div style={uploadBoxStyling} {...getRootProps()}>
@@ -83,6 +83,10 @@ function UploadBox() {
       </div>
       
       <SubmitButton uploadedReceipt={files.length > 0 ? true : false} fileName={thumbs[0] ? thumbs[0].name : ''}/>
+
+       <p style={textStyling}>
+        <a href="https://covid19.ontariohealth.ca/">get digital proof of vaccination</a>
+      </p>
     </>
   )
 }

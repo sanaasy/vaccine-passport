@@ -19,7 +19,7 @@ function NavigationBar() {
               <Nav.Link href="/home">UPLOAD PROOF</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="search">SEARCH LOCATIONS</Nav.Link>
+              <Nav.Link href="/search">SEARCH LOCATIONS</Nav.Link>
             </Nav.Item>
           </Nav>  
         </Navbar.Collapse>
