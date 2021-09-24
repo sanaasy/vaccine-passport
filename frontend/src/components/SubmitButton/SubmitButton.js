@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import {Button} from 'react-bootstrap';
-import QRCode from "../QRCode";
 import { useHistory } from "react-router-dom";
 
 function SubmitButton({uploadedReceipt, fileName}) {

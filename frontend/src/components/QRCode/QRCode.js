@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Image} from 'react-bootstrap';
 import QRAccept from './qrcode-accept.svg';
 import QRReject from './qrcode-reject.svg';
+import { useHistory } from "react-router-dom";
 
 function QRCode({accept}) {
     const imageStyling = {
@@ -17,6 +18,17 @@ function QRCode({accept}) {
         justifyContent: 'center',
         marginTop: '5rem'
     }
+
+    const history = useHistory();
+
+    const routeChange = () =>{ 
+        let path = `accept`; 
+        history.push(path);
+    }
+
+    setTimeout(() => {
+        routeChange()
+    }, 3000);
     
     if(accept){
         return (
